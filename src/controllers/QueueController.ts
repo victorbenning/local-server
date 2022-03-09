@@ -7,6 +7,6 @@ export default {
     res.sendStatus(200);
 
     developQueue.push(req.body);
-    return res.json({ queue: developQueue, payload});
+    console.log({ queue: developQueue, payload})
   },
 };
