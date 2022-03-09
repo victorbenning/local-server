@@ -2,6 +2,6 @@ import { Router } from 'express';
 import QueueController from './controllers/QueueController';
 const routes = Router();
 
-routes.get('/', QueueController.index)
+routes.post('/', QueueController.event)
 
 export default routes;
