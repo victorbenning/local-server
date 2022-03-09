@@ -3,6 +3,7 @@ var developQueue: any[] = [];
 
 export default {
   async event(req: Request, res: Response) {
-    return res.json({ queue: developQueue, message: req.body });
+    developQueue.push(req.body.event);
+    return res.json({ queue: developQueue, message: req.body.event });
   },
 };
