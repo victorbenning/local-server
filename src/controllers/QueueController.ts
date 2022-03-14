@@ -15,7 +15,6 @@ export default {
       pr_id: instructions[0]
     });
     
-
     if(instructions[1] === '--priority') { 
       developQueue.splice(0, 0, item);
     } else { 
