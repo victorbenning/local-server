@@ -33,9 +33,11 @@ export default {
 
   async done(req: Request, res: Response, next: NextFunction) {
     let payload = req.body
+    console.log(payload);
+
     let pr_number = payload.pr_id;
     let user_name = payload.user_name;
-    console.log(`pr_number: ${pr_number}`);
+    console.log(`pr_number: ${pr_number}: user_name: ${user_name}`);
     if(pr_number != undefined) { 
       developQueue = developQueue.filter((u) => u.pr_number != pr_number);
     } else { 
