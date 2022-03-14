@@ -9,11 +9,14 @@ export default {
     
     let item = new Queue();
     let instructions = payload.text.split(" ", 2);
-    
+    console.log(instructions);
     Object.assign(item, { 
       user_name: payload.user_name,
       pr_id: instructions[0]
     });
+
+    console.log(item);
+
     
     if(instructions[1] === '--priority') { 
       developQueue.splice(0, 0, item);
@@ -32,7 +35,7 @@ export default {
     let payload = req.body
     let pr_number = payload.pr_id;
     let user_name = payload.user_name;
-    
+    console.log(`pr_number: ${pr_number}`);
     if(pr_number != undefined) { 
       developQueue = developQueue.filter((u) => u.pr_number != pr_number);
     } else { 
@@ -40,6 +43,7 @@ export default {
       if(index >= 0) { 
         delete developQueue[index];
       }
+      console.log(`pr_number: ${index}`);
     }
   
     res.send(developQueue.map( item => item.user_name));
