@@ -36,7 +36,10 @@ export default {
     if(pr_number != undefined) { 
       developQueue = developQueue.filter((u) => u.pr_number != pr_number);
     } else { 
-      developQueue = developQueue.filter((u) => u.user_name != user_name);
+      const index = developQueue.findIndex((u) => u.user_name != user_name);
+      if(index >= 0) { 
+        developQueue.splice(index, 1);
+      }
     }
   
     res.send(developQueue.map( item => item.user_name));
