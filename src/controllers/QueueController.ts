@@ -5,8 +5,13 @@ var developQueue: any[] = [];
 
 export default {
   async claim(req: Request, res: Response, next: NextFunction) {
-    
-    developQueue.push(req.body.user_name);
+    let payload = req.body;
+    let instructions = req.body.text
+    if(payload.command === '--priority') { 
+      developQueue.splice(0, 0, req.body.user_name);
+    } else { 
+      developQueue.push(req.body.user_name);
+    }
 
     res.send(developQueue);
   },
@@ -16,8 +21,9 @@ export default {
   },
 
   async done(req: Request, res: Response, next: NextFunction) {
-    let payload = req.body;
-
+    let payload = req.body
+    console.log(req.body.pr_id);
+    
     const user = payload.user_name;
     developQueue = developQueue.filter((u) => u != user);
 
