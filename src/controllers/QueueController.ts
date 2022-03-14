@@ -38,7 +38,7 @@ export default {
     } else { 
       const index = developQueue.findIndex((u) => u.user_name != user_name);
       if(index >= 0) { 
-        developQueue.splice(index, 1);
+        delete developQueue[index];
       }
     }
   
