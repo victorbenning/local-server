@@ -25,16 +25,20 @@ export default {
   },
 
   async show(req: Request, res: Response, next: NextFunction) {
-    res.send(developQueue);
+    res.send(developQueue.map( item => item.user_name));
   },
 
   async done(req: Request, res: Response, next: NextFunction) {
     let payload = req.body
-    console.log(req.body.pr_id);
-
-    const user = payload.user_name;
-    developQueue = developQueue.filter((u) => u != user);
-
-    res.send(developQueue);
+    let pr_number = payload.pr_id;
+    let user_name = payload.user_name;
+    
+    if(pr_number != undefined) { 
+      developQueue = developQueue.filter((u) => u.pr_number != pr_number);
+    } else { 
+      developQueue = developQueue.filter((u) => u.user_name != user_name);
+    }
+  
+    res.send(developQueue.map( item => item.user_name));
   },
 };
