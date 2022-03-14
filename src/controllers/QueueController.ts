@@ -41,11 +41,12 @@ export default {
     if(pr_number != undefined) { 
       developQueue = developQueue.filter((u) => u.pr_number != pr_number);
     } else { 
+      console.log(developQueue)
       const index = developQueue.findIndex((u) => u.user_name != user_name);
       if(index >= 0) { 
         delete developQueue[index];
       }
-      console.log(`pr_number: ${index}`);
+      console.log(`index: ${index}`);
     }
   
     res.send(developQueue.map( item => item.user_name));
