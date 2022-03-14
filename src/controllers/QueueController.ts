@@ -25,7 +25,7 @@ export default {
   },
 
   async show(req: Request, res: Response, next: NextFunction) {
-    res.send(developQueue.map( item => item.user_name));
+    res.send(developQueue.map( item => `${item.user_name} for ${item.pr_number}`));
   },
 
   async done(req: Request, res: Response, next: NextFunction) {
