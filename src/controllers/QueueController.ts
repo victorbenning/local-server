@@ -12,7 +12,7 @@ export default {
     console.log(instructions);
     Object.assign(item, { 
       user_name: payload.user_name,
-      pr_id: instructions[0]
+      pr_number: instructions[0]
     });
 
     console.log(item);
