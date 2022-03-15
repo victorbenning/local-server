@@ -42,7 +42,7 @@ export default {
       developQueue = developQueue.filter((u) => u.pr_number != pr_number);
     } else { 
       console.log(developQueue)
-      const index = developQueue.findIndex((u) => u.user_name != user_name);
+      const index = developQueue.findIndex((u) => u.user_name === user_name);
       if(index >= 0) { 
         delete developQueue[index];
       }

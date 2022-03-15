@@ -8,6 +8,6 @@ app.use(express.urlencoded({ limit: '50mb' }));
 app.use(routes);
 
 
-app.listen(8080, async () => {
+app.listen(3333, async () => {
   console.log('🚀 server started on port 8080!');
 });
