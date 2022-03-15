@@ -44,7 +44,7 @@ export default {
       console.log(developQueue)
       const index = developQueue.findIndex((u) => u.user_name === user_name);
       if(index >= 0) { 
-        delete developQueue[index];
+        developQueue.splice(index, 1);
       }
       console.log(`index: ${index}`);
     }
