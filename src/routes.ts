@@ -1,9 +1,7 @@
 import { Router } from 'express';
-import QueueController from './controllers/QueueController';
+import ProductController from './controllers/ProductController';
 const routes = Router();
 
-routes.post('/claim-for', QueueController.claim)
-routes.post('/done', QueueController.done)
-routes.post('/show', QueueController.show)
+routes.get('/product-list', ProductController.index);
 
 export default routes;
