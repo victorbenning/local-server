@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import ProductController from './controllers/ProductController';
+import MainController from './controllers/MainController';
 const routes = Router();
 
-routes.get('/product-list', ProductController.index);
+routes.get('/json', MainController.index);
 
 export default routes;
