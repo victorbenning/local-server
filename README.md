@@ -3,7 +3,7 @@
 
 This is a simple local server that will return a mock json. You can change what is the json returned, create new json to be return from different endpoint.
 
-
+It was created to help people trying to learn how to consume an API and being able to use any json schema they want.
 
 
 ## Setting up
