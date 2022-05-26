@@ -6,7 +6,7 @@ export default {
   async index(req: Request, res: Response, next: NextFunction) {
     let fileName = req.query.name;
     const dataFolder = path.resolve(__dirname, "..", "data");
-    const fullPath = dataFolder + `/${fileName === undefined ? "asos-product-list.json" : fileName}`;
+    const fullPath = dataFolder + `/${fileName === undefined ? "user.json" : fileName}`;
     
     if (fs.existsSync(fullPath)) { 
       const data = fs.readFileSync(fullPath);
